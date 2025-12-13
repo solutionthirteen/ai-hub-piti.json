@@ -4,7 +4,8 @@ FROM runpod/worker-comfyui:5.5.0-base
 # install custom nodes into comfyui
 # QwenVL Custom Node installieren
 RUN cd /comfyui/custom_nodes && \
-    git clone https://github.com/AILab-AI/ComfyUI-QwenVL
+    git clone https://github.com/1038lab/ComfyUI-QwenVL
+
 
 # download models into comfyui
 RUN comfy model download --url https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors --relative-path models/vae --filename ae.safetensors
