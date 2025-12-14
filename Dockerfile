@@ -5,7 +5,9 @@ FROM runpod/worker-comfyui:5.5.0-base
 # QwenVL Custom Node installieren
 RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/1038lab/ComfyUI-QwenVL
-
+# TinyTerra Nodes (ttN text)
+RUN cd /comfyui/custom_nodes && \
+    git clone https://github.com/TinyTerra/ComfyUI_tinyterraNodes
 
 # download models into comfyui
 RUN comfy model download --url https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors --relative-path models/vae --filename ae.safetensors
