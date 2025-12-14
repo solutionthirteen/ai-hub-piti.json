@@ -8,6 +8,11 @@ RUN cd /comfyui/custom_nodes && \
 # TinyTerra Nodes (ttN text)
 RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/TinyTerra/ComfyUI_tinyterraNodes
+RUN cd /comfyui/custom_nodes && \
+    git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+RUN cd /comfyui/custom_nodes && \
+    git clone https://github.com/lrzjason/Comfyui-QwenEditUtils
+
 
 # download models into comfyui
 RUN comfy model download --url https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors --relative-path models/vae --filename ae.safetensors
