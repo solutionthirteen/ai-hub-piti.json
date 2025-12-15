@@ -25,3 +25,14 @@ RUN comfy model download --url https://huggingface.co/Comfy-Org/z_image_turbo/re
 RUN comfy model download --url https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors --relative-path models/text_encoders --filename qwen_3_4b.safetensors
 RUN comfy model download --url https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_bf16.safetensors --relative-path models/diffusion_models --filename z_image_turbo_bf16.safetensors
 # COPY input/ /comfyui/input/
+# Qwen3-VL-4B-Instruct vorinstallieren (LLM + Vision)
+RUN pip install --no-cache-dir huggingface_hub && \
+    python - << 'EOF'
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    repo_id="Qwen/Qwen3-VL-4B-Instruct",
+    local_dir="/comfyui/models/LLM/Qwen-VL/Qwen3-VL-4B-Instruct",
+    local_dir_use_symlinks=False
+)
+EOF
