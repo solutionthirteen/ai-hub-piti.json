@@ -12,6 +12,9 @@ RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/lrzjason/Comfyui-QwenEditUtils
+RUN cd /comfyui/custom_nodes && \
+    git clone https://github.com/yolain/ComfyUI-Easy-Use.git
+
 
 
 # download models into comfyui
