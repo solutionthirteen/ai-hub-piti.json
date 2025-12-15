@@ -14,6 +14,9 @@ RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/lrzjason/Comfyui-QwenEditUtils
 RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/yolain/ComfyUI-Easy-Use.git
+RUN pip install --no-cache-dir -r /comfyui/custom_nodes/ComfyUI-Easy-Use/requirements.txt
+
+
 
 
 
